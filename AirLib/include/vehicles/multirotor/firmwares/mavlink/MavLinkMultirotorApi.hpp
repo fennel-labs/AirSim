@@ -175,7 +175,7 @@ public: //methods
         state.pose.orientation = VectorMath::toQuaternion(current_state_.attitude.pitch, current_state_.attitude.roll, current_state_.attitude.yaw);
         state.twist.linear = Vector3r(current_state_.local_est.lin_vel.x, current_state_.local_est.lin_vel.y, current_state_.local_est.lin_vel.z);
         state.twist.angular = Vector3r(current_state_.attitude.roll_rate, current_state_.attitude.pitch_rate, current_state_.attitude.yaw_rate);
-        state.pose.position = Vector3r(current_state_.local_est.acc.x, current_state_.local_est.acc.y, current_state_.local_est.acc.z);
+        state.accelerations.linear = Vector3r(current_state_.local_est.acc.x, current_state_.local_est.acc.y, current_state_.local_est.acc.z);
         //TODO: how do we get angular acceleration?
         return state;
     }
