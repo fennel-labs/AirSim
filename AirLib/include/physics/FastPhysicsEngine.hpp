@@ -74,6 +74,8 @@ private:
         //get current kinematics state of the body - this state existed since last dt seconds
         const Kinematics::State& current = body.getKinematics();
         Kinematics::State next;
+        next.timestamp = body.last_kinematics_time;
+
         Wrench next_wrench;
 
         //first compute the response as if there was no collision

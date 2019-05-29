@@ -261,7 +261,7 @@ public:
 
         uint64_t timestamp;
 
-        MSGPACK_DEFINE_MAP(position, orientation, linear_velocity, angular_velocity, linear_acceleration, angular_acceleration);
+        MSGPACK_DEFINE_MAP(position, orientation, linear_velocity, angular_velocity, linear_acceleration, angular_acceleration, timestamp);
 
 
         KinematicsState()
