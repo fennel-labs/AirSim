@@ -503,6 +503,7 @@ void PawnSimApi::updateKinematics(float dt)
 
     next_kinematics.accelerations.linear = (next_kinematics.twist.linear - kinematics_->getTwist().linear) / dt;
     next_kinematics.accelerations.angular = (next_kinematics.twist.angular - kinematics_->getTwist().angular) / dt;
+    next_kinematics.timestamp = clock()->nowNanos();
 
     kinematics_->setState(next_kinematics);
     kinematics_->update();

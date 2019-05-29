@@ -16,6 +16,7 @@ public:
         Pose pose;
         Twist twist;
         Accelerations accelerations;
+        uint64_t timestamp;
 
         static State zero()
         {
@@ -24,6 +25,7 @@ public:
             zero_state.pose.orientation = Quaternionr::Identity();
             zero_state.twist = Twist::zero();
             zero_state.accelerations = Accelerations::zero();
+            zero_state.timestamp = 0;
 
             return zero_state;
         }
@@ -66,6 +68,7 @@ public:
         reporter.writeValue("Lin-Accl", current_.accelerations.linear);
         reporter.writeValue("Ang-Vel", current_.twist.angular);
         reporter.writeValue("Ang-Accl", current_.accelerations.angular);
+        reporter.writeValue("Timestamp", current_.timestamp);
     }
     //*** End: UpdatableState implementation ***//
 
@@ -84,6 +87,13 @@ public:
     void setTwist(const Twist& twist)
     {
         current_.twist = twist;
+    }
+    uint64_t getTimestamp() const
+    {
+        return current_.timestamp;
+    }
+    void setTimestamp(uint64_t timestamp) {
+        current_.timestamp = timestamp;
     }
 
     const State& getState() const

@@ -259,6 +259,8 @@ public:
         Vector3r linear_acceleration;
         Vector3r angular_acceleration;
 
+        uint64_t timestamp;
+
         MSGPACK_DEFINE_MAP(position, orientation, linear_velocity, angular_velocity, linear_acceleration, angular_acceleration);
 
 
@@ -273,6 +275,7 @@ public:
             angular_velocity = s.twist.angular;
             linear_acceleration = s.accelerations.linear;
             angular_acceleration = s.accelerations.angular;
+            timestamp = s.timestamp;
         }
 
         msr::airlib::Kinematics::State to() const
@@ -284,6 +287,7 @@ public:
             s.twist.angular = angular_velocity.to();
             s.accelerations.linear = linear_acceleration.to();
             s.accelerations.angular = angular_acceleration.to();
+            s.timestamp = timestamp;
 
             return s;
         }
