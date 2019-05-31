@@ -1,0 +1,12 @@
+--- client_bak.cc	2019-05-31 09:34:36.337620800 +0200
++++ client.cc	2019-05-31 09:31:44.301991000 +0200
+@@ -192,8 +192,7 @@
+ }
+ 
+ int client::get_next_call_idx() {
+-    ++(pimpl->call_idx_);
+-    return pimpl->call_idx_;
++    return ++(pimpl->call_idx_);
+ }
+ 
+ void client::post(std::shared_ptr<RPCLIB_MSGPACK::sbuffer> buffer, int idx,

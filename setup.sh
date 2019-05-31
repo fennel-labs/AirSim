@@ -93,6 +93,7 @@ if [ ! -d "external/rpclib/rpclib-2.2.1" ]; then
     mkdir -p "external/rpclib"
     unzip v2.2.1.zip -d external/rpclib
     rm v2.2.1.zip
+    ./patch.sh
 fi
 
 # Download high-polycount SUV model
