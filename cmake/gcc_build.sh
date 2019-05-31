@@ -34,7 +34,7 @@ if [ -d "CMakeFiles" ]; then
 rm -rf CMakeFiles
 fi
 
-GCCARGS="-D CMAKE_BUILD_TYPE=Debug"
+GCCARGS="-D CMAKE_BUILD_TYPE=Release"
 
 GCCVERSION=$(gcc -v 2>&1 | sed -n "/^gcc version/p" | sed -e "s/^gcc version \([0-9]\)/\1/g" | cut -d"." -f1)
 if [ $GCCVERSION -lt 5 ]; then
