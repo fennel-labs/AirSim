@@ -65,7 +65,7 @@ IF NOT EXIST external\rpclib\rpclib-2.2.1 (
 	powershell -command "& { Expand-Archive -Path external\rpclib.zip -DestinationPath external\rpclib }"
 	del external\rpclib.zip /q
 
-	sh patch.sh
+	patch.sh
 	
 	REM //Don't fail the build if the high-poly car is unable to be downloaded
 	REM //Instead, just notify users that the gokart will be used.
