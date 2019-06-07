@@ -10,6 +10,9 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 pushd $SCRIPTPATH
 
+CMAKE_PATH=$SCRIPTPATH/../cmake_build/bin
+export PATH=$CMAKE_PATH:$PATH
+
 # update the rpclib git submodule
 pushd ..
 git submodule update --init --recursive
