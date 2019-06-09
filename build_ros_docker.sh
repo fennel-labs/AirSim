@@ -4,7 +4,7 @@
 ./build_ros.sh
 
 # delete unneccessary stuff
-rm !("AirLib"|"build_ros.sh") -rf
+rm !("AirLib"") -rf
 rm .* -rf
 cd AirLib
 rm !("include"|"deps"|"lib") -rf
