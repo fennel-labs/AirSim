@@ -4,6 +4,7 @@
 ./build_ros.sh
 
 # delete unneccessary stuff
+shopt -s extglob
 rm !("AirLib"") -rf
 rm .* -rf
 cd AirLib
