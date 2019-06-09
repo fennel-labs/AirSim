@@ -5,7 +5,7 @@
 
 # delete unneccessary stuff
 shopt -s extglob
-rm !("AirLib"") -rf
+rm !("AirLib") -rf
 rm .* -rf
 cd AirLib
 rm !("include"|"deps"|"lib") -rf
