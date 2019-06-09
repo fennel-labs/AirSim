@@ -13,6 +13,9 @@ set -e
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pushd "$SCRIPT_DIR" >/dev/null
 
+echo "export AIRSIM_ROOT=\"$SCRIPT_DIR\"" | tee -a ~/.bashrc
+source ~/.bashrc
+
 #Parse command line arguments
 downloadHighPolySuv=true
 if [[ $1 == "--no-full-poly-car" ]]; then
