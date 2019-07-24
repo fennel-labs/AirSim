@@ -210,7 +210,7 @@ protected:
 
 	virtual void commandRateThrottle(float pitch_rate, float roll_rate, float yaw_rate, float throttle)
 	{
-		Utils::log(Utils::stringf("commandRateThrottle %f, %f, %f, %f", pitch_rate, roll_rate, yaw_rate, throttle));
+		//Utils::log(Utils::stringf("commandRateThrottle %f, %f, %f, %f", pitch_rate, roll_rate, yaw_rate, throttle));
 
 		typedef simple_flight::GoalModeType GoalModeType;
 		simple_flight::GoalMode mode(GoalModeType::AngleRate, GoalModeType::AngleRate, GoalModeType::AngleRate, GoalModeType::Passthrough);
